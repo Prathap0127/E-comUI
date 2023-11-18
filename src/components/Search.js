@@ -5,6 +5,8 @@ import Main from "./Main";
 import { useCart } from "../context/cart";
 import { toast } from "react-hot-toast";
 
+//seperate search page for searched product using search bar
+
 const Search = () => {
   const [values] = useSearch();
   const [cart, setCart] = useCart();
@@ -15,7 +17,7 @@ const Search = () => {
         <div className="text-center mt-3">
           <h5 className="text-center">Search Result</h5>
           <h6>
-            {values.result.length < 1
+            {values.result.length < 1 //no of product in cart less then one then the condition to product or empty
               ? "Product Not Found"
               : `Found ${values.result.length}`}
           </h6>
@@ -32,6 +34,7 @@ const Search = () => {
                   <p className="card-text">
                     {p.description.substring(0, 30)}...
                   </p>
+                  {/* direct to other page product detail page */}
                   <button
                     className="btn btn-dark ms-1"
                     onClick={() => navigate(`/product/${p.slug}`)}
@@ -42,6 +45,7 @@ const Search = () => {
                     className="btn btn-warning"
                     onClick={() => {
                       // console.log(...cart, p);
+                      // add the product cart using local storage
                       setCart([...cart, p]);
                       localStorage.setItem(
                         "cart",

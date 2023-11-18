@@ -1,6 +1,8 @@
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
 
+// user authentications using the user data  from login to logout from the local storage
+
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -26,6 +28,7 @@ const AuthProvider = ({ children }) => {
   }, []);
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
+      {/* passing the data to the entier child from the parents */}
       {children}
     </AuthContext.Provider>
   );

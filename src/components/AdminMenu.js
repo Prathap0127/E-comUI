@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+//admin side menu bar
 const AdminMenu = () => {
   return (
     <>

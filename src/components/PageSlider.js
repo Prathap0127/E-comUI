@@ -2,7 +2,7 @@ import React from "react";
 import slider1 from "../images/slider01.jpg";
 import slider2 from "../images/slider02.jpg";
 import slider3 from "../images/slider03.jpg";
-
+// page slider used in the home page for show slide products using bootstrap carousel
 const PageSlider = () => {
   return (
     <>

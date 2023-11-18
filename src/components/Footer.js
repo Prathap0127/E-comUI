@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//general footer for the entier project page
 const Footer = () => {
   return (
     <div className="footer">

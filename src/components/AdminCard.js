@@ -1,5 +1,7 @@
 import React from "react";
 
+//dashboard admin card to display user list and products
+
 const AdminCard = (props) => {
   return (
     <>

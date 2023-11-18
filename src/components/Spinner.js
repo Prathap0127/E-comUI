@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+// used to load the page
 const Spinner = ({ path = "login" }) => {
   let [count, setCount] = useState(2);
   let navigate = useNavigate();
@@ -12,10 +12,10 @@ const Spinner = ({ path = "login" }) => {
     }, 1000);
     count === 0 &&
       navigate(`/${path}`, {
-        state: location.pathname,
+        state: location.pathname, //use to make the user in the same path ofter logout
       });
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // if the data found the loading get cleared and shows the data
   }, [count, navigate, location, path]);
 
   return (

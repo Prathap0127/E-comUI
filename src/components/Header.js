@@ -10,7 +10,7 @@ import { Badge } from "antd";
 const Header = () => {
   const [cart] = useCart();
   const categories = useCategory();
-  let [auth, setAuth] = useAuth();
+  let [auth, setAuth] = useAuth(); //geting user data from the auth hooks
   let handleLogout = () => {
     setAuth({
       ...auth,
@@ -71,6 +71,8 @@ const Header = () => {
                       All Categories
                     </Link>
                   </li>
+                  {/* //get the categories from the slug from db and display in
+                  header section */}
                   {categories?.map((c) => (
                     <li>
                       <Link
@@ -89,6 +91,7 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li> */}
+              {/* check with user login and show login In and logout accordingly */}
               {!auth.user ? (
                 <>
                   <li className="nav-item">
@@ -138,7 +141,7 @@ const Header = () => {
                   </li>
                 </>
               )}
-
+              {/* shows the cart data no of items */}
               <li className="nav-item">
                 <Badge count={cart.length} showZero>
                   <NavLink to="/cart" className="nav-link" href="#">
