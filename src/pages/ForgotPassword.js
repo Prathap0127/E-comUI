@@ -53,6 +53,7 @@ const ForgotPassword = () => {
             />
           </div>
           <div className="mb-3">
+            {/* answer is the key to change the password of user */}
             <input
               type="text"
               value={answer}

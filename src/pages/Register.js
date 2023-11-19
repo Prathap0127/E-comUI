@@ -4,6 +4,7 @@ import Main from "../components/Main";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+//user registration form
 const Register = () => {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");

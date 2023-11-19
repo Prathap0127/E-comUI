@@ -10,8 +10,11 @@ import { CartProvider } from "./context/cart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // auth for the authorization data
   <AuthProvider>
+    {/* search data in the header sections to pass */}
     <SearchProvider>
+      {/* added to cart product */}
       <CartProvider>
         <BrowserRouter>
           <App />

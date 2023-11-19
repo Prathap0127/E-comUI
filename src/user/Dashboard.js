@@ -5,13 +5,13 @@ import Main from "../components/Main";
 import UserMenu from "../components/UserMenu";
 import { useAuth } from "../context/auth";
 
+//user seperate dash board
 const Dashboard = () => {
   const [auth] = useAuth();
   const [order, setOrder] = useState([]);
 
   const handleCard = async () => {
     try {
-      //https://asnjewelshop.onrender.com/api/users
       const { data } = await axios.get(
         `${process.env.REACT_APP_SERVER_URL}/api/users/get-orders`
       );
@@ -34,6 +34,7 @@ const Dashboard = () => {
           <div className="col-md-9">
             <h1 className="text-center">{auth.user.name} DashBoard</h1>
             <div className="row justify-content-sm-start">
+              {/* seperate card to display user data */}
               <AdminCard
                 data={{
                   title: "Orders",
@@ -43,12 +44,6 @@ const Dashboard = () => {
                 }}
               />
             </div>
-            {/* <div className="card mt-4 w-75 p-3">
-              <h4>Name: {auth?.user?.name}</h4>
-              <h4>Email: {auth?.user?.email}</h4>
-              <h4>Phone: {auth?.user?.phone}</h4>
-              <h4>Email: {auth?.user?.address}</h4>
-            </div> */}
           </div>
         </div>
       </div>

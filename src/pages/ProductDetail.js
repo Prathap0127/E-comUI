@@ -5,6 +5,7 @@ import Main from "../components/Main";
 import { useCart } from "../context/cart";
 import { toast } from "react-hot-toast";
 
+//product details page seperate with sugesstion in the bottom
 const ProductDetail = () => {
   const navigate = useNavigate();
   const params = useParams();
@@ -18,6 +19,7 @@ const ProductDetail = () => {
     }
   }, []);
 
+  //get seprate product details
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
@@ -31,7 +33,7 @@ const ProductDetail = () => {
     }
   };
 
-  //similar product
+  //getting similar product to display
   const similarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
@@ -80,6 +82,7 @@ const ProductDetail = () => {
         </div>
       </div>
       <hr />
+      {/* similar product section */}
       <div className="container mt-2">
         <div className="row similar-products">
           <h4>Similar Product</h4>

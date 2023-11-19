@@ -26,16 +26,18 @@ import CategorizedProduct from "./pages/CategorizedProduct";
 import CartPage from "./pages/CartPage";
 
 function App() {
-  console.log(process.env.REACT_APP_SERVER_URL);
+  // console.log(process.env.REACT_APP_SERVER_URL);
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* user routes */}
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
           <Route path="user/profile" element={<Profile />} />
           <Route path="user/orders" element={<UserOrders />} />
         </Route>
+        {/* admin routes */}
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashBoard />} />
           <Route path="admin/create-category" element={<CreateCategory />} />

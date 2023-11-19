@@ -41,7 +41,7 @@ const Login = () => {
 
   return (
     <Main>
-      {/* need to change the class name */}
+      {/* form to get the user details to process login operation*/}
       <div className="w-50 center">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>

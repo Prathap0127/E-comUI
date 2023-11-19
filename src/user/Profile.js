@@ -5,6 +5,7 @@ import Main from "../components/Main";
 import UserMenu from "../components/UserMenu";
 import { useAuth } from "../context/auth";
 
+// user profile updation form
 const Profile = () => {
   //context
   const [auth, setAuth] = useAuth();

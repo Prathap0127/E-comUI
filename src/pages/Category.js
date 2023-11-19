@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   const categories = useCategory();
+  //seperate hooks used to get the category to header and sidebar pages
   return (
     <Main>
       <div className="container">

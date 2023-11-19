@@ -4,6 +4,7 @@ import Main from "../components/Main";
 import UserMenu from "../components/UserMenu";
 import { useAuth } from "../context/auth";
 
+//user order data
 const UserOrders = () => {
   const [orders, setOrders] = useState([]);
   const [auth] = useAuth();
@@ -13,10 +14,8 @@ const UserOrders = () => {
       const { data } = await axios.get(
         `${process.env.REACT_APP_SERVER_URL}/api/users/get-orders`
       );
-
-      setOrders(data);
-
-      console.log(data);
+      setOrders(data); //update user order data
+      // console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +49,7 @@ const UserOrders = () => {
                         <th scope="col">Payment</th>
                       </tr>
                     </thead>
-
+                    {/* table details */}
                     <tbody>
                       <tr key={i + 1}>
                         <td>{i + 1}</td>

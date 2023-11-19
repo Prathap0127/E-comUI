@@ -16,15 +16,15 @@ const CategorizedProduct = () => {
     if (params.slug) {
       getProductbyCate();
     }
-  }, [params.slug]);
+  }, [params.slug]); //using the product slug name to search
 
   const getProductbyCate = async () => {
     try {
       const { data } = await axios.get(
         `${process.env.REACT_APP_SERVER_URL}/api/product/product-category/${params.slug}`
       );
-      setProduct(data.products);
-      setCategory(data.category);
+      setProduct(data.products); //upadte product data
+      setCategory(data.category); // update categeory data
       console.log(data.products);
     } catch (error) {
       console.log(error);
@@ -77,6 +77,7 @@ const CategorizedProduct = () => {
                           JSON.stringify([...cart, p])
                         );
                         toast.success("product added to cart");
+                        //product add to cart in local storage
                       }}
                     >
                       Add to cart
